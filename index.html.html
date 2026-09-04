@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TDM Motors | Panel Beating, Servicing & Commission Sales</title>
+<style>
+    :root {
+        --primary-red: #D32F2F;
+        --accent-green: #2E7D32;
+        --highlight-yellow: #FBC02D;
+        --dark-bg: #1E293B;
+        --light-bg: #F8FAFC;
+        --text-color: #334155;
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--text-color);
+        background-color: var(--light-bg);
+        line-height: 1.6;
+    }
+
+    /* Header & Navigation */
+    header {
+        background-color: var(--dark-bg);
+        color: white;
+        border-bottom: 5px solid var(--highlight-yellow);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    
+    .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+    }
+
+    .logo-area h1 {
+        font-size: 24pt;
+        font-weight: 900;
+        color: var(--primary-red);
+        letter-spacing: 1px;
+    }
+    
+    .logo-area p {
+        font-size: 9pt;
+        color: var(--highlight-yellow);
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 11pt;
+        transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: var(--highlight-yellow);
+    }
+
+    /* Hero Section */
+    .hero {
+        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://placehold.co/1920x1080/1E293B/FFF?text=TDM+Motors+Workshop') center/cover no-repeat;
+        color: white;
+        text-align: center;
+        padding: 100px 20px;
+        border-bottom: 6px solid var(--accent-green);
+    }
+
+    .hero h2 {
+        font-size: 32pt;
+        font-weight: 800;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+    }
+
+    .hero p {
+        font-size: 16pt;
+        color: var(--highlight-yellow);
+        font-style: italic;
+        margin-bottom: 30px;
+    }
+
+    .cta-btn {
+        background-color: var(--primary-red);
+        color: white;
+        padding: 12px 30px;
+        font-size: 12pt;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 5px;
+        text-transform: uppercase;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        transition: background-color 0.3s;
+    }
+
+    .cta-btn:hover {
+        background-color: #b71c1c;
+    }
+
+    /* Main Container */
+    .container {
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 22pt;
+        color: var(--dark-bg);
+        margin-bottom: 40px;
+        text-transform: uppercase;
+        position: relative;
+    }
+
+    .section-title::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 4px;
+        background-color: var(--primary-red);
+        margin: 10px auto 0 auto;
+    }
+
+    /* Services Grid */
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-bottom: 50px;
+    }
+
+    .service-card {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        border-top: 4px solid var(--accent-green);
+        transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .service-card h3 {
+        font-size: 15pt;
+        color: var(--dark-bg);
+        margin-bottom: 10px;
+    }
+
+    .service-card p {
+        font-size: 11pt;
+        color: #64748B;
+    }
+
+    /* About Section */
+    .about-box {
+        background: white;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        border-left: 6px solid var(--primary-red);
+        margin-bottom: 50px;
+    }
+
+    .about-box p {
+        font-size: 12pt;
+        line-height: 1.8;
+        margin-bottom: 15px;
+    }
+
+    /* Contact Section */
+    .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        background: white;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        border-top: 4px solid var(--highlight-yellow);
+        margin-bottom: 50px;
+    }
+
+    .contact-item {
+        font-size: 12pt;
+    }
+
+    .contact-item strong {
+        display: block;
+        color: var(--dark-bg);
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        font-size: 10pt;
+    }
+
+    /* Footer */
+    footer {
+        background-color: var(--dark-bg);
+        color: white;
+        text-align: center;
+        padding: 30px 20px;
+        border-top: 4px solid var(--primary-red);
+        font-size: 10pt;
+    }
+</style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <h1>TDM MOTORS</h1>
+                <p>Panel Beating & Servicing</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2>Expert Auto Care & Vehicle Solutions</h2>
+        <p>"TDM Motors: Restoring the Beauty, Securing the Drive."</p>
+        <a href="#contact" class="cta-btn">Get a Free Quote</a>
+    </section>
+
+    <div class="container">
+        
+        <h2 id="services" class="section-title">What We Offer</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Precision Panel Beating</h3>
+                <p>Expert collision damage repair, dent removal, structural alignment, and professional spray painting with exact color matching.</p>
+            </div>
+            <div class="service-card" style="border-top-color: var(--primary-red);">
+                <h3>Mechanical Servicing</h3>
+                <p>Comprehensive car servicing, computer engine diagnostics, suspension overhauls, and reliable brake repairs to keep you safe.</p>
+            </div>
+            <div class="service-card" style="border-top-color: var(--highlight-yellow);">
+                <h3>Commission Sales & Advice</h3>
+                <p>Commission-based buying and selling of motor vehicles on your behalf, backed by professional, trusted automotive consultations.</p>
+            </div>
+        </div>
+
+        <h2 id="about" class="section-title">About TDM Motors</h2>
+        <div class="about-box">
+            <p>Based in the heart of Msasa, Harare, <strong>TDM Motors</strong> is dedicated to delivering master craftsmanship and dependable customer service. Whether your vehicle requires intensive accident restoration or standard routine maintenance, our mechanics treat every car with precision and care.</p>
+            <p>In addition to top-tier workshop repairs, we provide seamless commission-based vehicle trading and expert consultations so you can make informed automotive investments without the hassle.</p>
+        </div>
+
+        <h2 id="contact" class="section-title">Get In Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <strong>Location</strong>
+                📍 186 Mutare Road, Msasa, Harare
+            </div>
+            <div class="contact-item">
+                <strong>Phone Number</strong>
+                📞 0772 932 519
+            </div>
+            <div class="contact-item">
+                <strong>Email Address</strong>
+                ✉️ teedeemangwendemotors@gmail.com
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 TDM Motors (Private) Limited. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
